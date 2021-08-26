@@ -32,13 +32,13 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onJoin(AsyncPlayerPreLoginEvent event) {
-        Profile profile = new Profile(event.getUniqueId(), event.getName());
+        new Profile(event.getUniqueId(), event.getName());
     }
 
     @EventHandler
     public void onDisconnect(PlayerQuitEvent event) {
         Profile profile = Profile.getFromUuid(event.getPlayer().getUniqueId());
-        profile.save(false);
+        profile.save(true); // try async?
         Profile.profiles.remove(event.getPlayer().getUniqueId());
     }
 }

@@ -53,7 +53,8 @@ configurations.all {
 
 shadowJar {
     def things = [
-            'org.mongodb'
+            'org.mongodb',
+            'com.google.gson'
     ]
 
     things.forEach {

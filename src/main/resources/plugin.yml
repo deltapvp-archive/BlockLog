@@ -3,3 +3,5 @@ version: ${version}
 main: net.deltapvp.blocklog.BlockLog
 commands:
   blocklog:
+    aliases: [logblock]
+    permission: blocklog.use

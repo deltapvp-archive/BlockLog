@@ -72,7 +72,7 @@ public class Profile {
             }
 
             if (document.containsKey("blocks")) {
-                JsonArray logList = JsonParser.parseString(document.getString("blocks")).getAsJsonArray();
+                JsonArray logList = new JsonParser().parse(document.getString("blocks")).getAsJsonArray();
                 for (JsonElement yeet : logList) {
                     BlockLogThing log = BlockLogThing.deserialize(yeet.getAsJsonObject());
 

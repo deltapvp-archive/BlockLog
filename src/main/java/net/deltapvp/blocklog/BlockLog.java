@@ -13,17 +13,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
-
 public final class BlockLog extends JavaPlugin {
 
     private static BlockLog instance;
     public MongoDatabase mongoDatabase;
     public MongoCollection<Document> collection;
-    private Map<UUID, List<BlockLogThing>> cache = new ConcurrentHashMap<>();
+
+    public static BlockLog getInstance() {
+        return instance;
+    }
 
     @Override
     public void onLoad() {
@@ -41,14 +39,6 @@ public final class BlockLog extends JavaPlugin {
     @Override
     public void onDisable() {
         instance = null;
-    }
-
-    public static BlockLog getInstance() {
-        return instance;
-    }
-
-    public Map<UUID, List<BlockLogThing>> getCache() {
-        return cache;
     }
 
     @Override
