@@ -1,0 +1,5 @@
+name: BlockLog
+version: ${version}
+main: net.deltapvp.blocklog.BlockLog
+commands:
+  blocklog:
